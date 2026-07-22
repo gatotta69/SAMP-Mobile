@@ -11,17 +11,10 @@ elseif(${ANDROID_ABI} STREQUAL "arm64-v8a")
     set(GLOSSHOOK_ABI "ARM64")
 endif()
 
-file(GLOB_RECURSE SOURCES
-        ${CMAKE_CURRENT_LIST_DIR}/*.c*
-        ${CMAKE_CURRENT_LIST_DIR}/**/*.c*
-        ${CMAKE_CURRENT_LIST_DIR}/**/**/*.c*
-        ${CMAKE_CURRENT_LIST_DIR}/**/**/**/*.c*
-        ${CMAKE_CURRENT_LIST_DIR}/**/**/**/**/*.c*
-        ${CMAKE_CURRENT_LIST_DIR}/**/**/**/**/**/*.c*
-        ${CMAKE_CURRENT_LIST_DIR}/**/**/**/**/**/**/*.c*
-        ${CMAKE_CURRENT_LIST_DIR}/**/**/**/**/**/**/**/*.c*
-        ${CMAKE_CURRENT_LIST_DIR}/**/**/**/**/**/**/**/**/*.c*
-        ${CMAKE_CURRENT_LIST_DIR}/**/**/**/**/**/**/**/**/**/*.c*
+file(GLOB_RECURSE SOURCES CONFIGURE_DEPENDS
+        "${CMAKE_CURRENT_LIST_DIR}/*.cpp"
+        "${CMAKE_CURRENT_LIST_DIR}/*.c"
+        "${CMAKE_CURRENT_LIST_DIR}/*.cc"
 )
 
 include_directories(
