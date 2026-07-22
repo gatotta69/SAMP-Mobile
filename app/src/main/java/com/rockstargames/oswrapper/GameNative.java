@@ -13,6 +13,12 @@ public class GameNative {
         ShadowHook.init(new ShadowHook.ConfigBuilder()
                 .setMode(ShadowHook.Mode.UNIQUE)
                 .build());
+        try {
+            System.loadLibrary("bass");
+            System.loadLibrary("bass_ssl");
+            System.loadLibrary("Vendor_mpg123");
+            System.loadLibrary("openal");
+        } catch (Throwable ignored) {}
         System.loadLibrary("Game");
         System.loadLibrary("samp");
     }
